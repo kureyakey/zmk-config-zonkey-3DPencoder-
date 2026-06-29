@@ -24,7 +24,7 @@
         device = <&trackball>;
         input-processors = <&mouse_runtime_input_processor>;
 
-        /* スクロールレイヤー: 指定レイヤーでカーソル移動をスクロールに変換 */
+        
         scroller {
             layers = <スクロールレイヤー番号>;
             input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
