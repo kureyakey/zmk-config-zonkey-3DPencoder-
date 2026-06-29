@@ -18,19 +18,7 @@
         ;
 };
 
-/ {
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&mouse_runtime_input_processor>;
 
-        /* スクロールレイヤー: 指定レイヤーでカーソル移動をスクロールに変換 */
-        scroller {
-            layers = <5>;
-            input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
-        };
-    };
-};
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -60,12 +48,27 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
-    /* 💡 ノード名を元の trackball@0 に修正 */
-    trackball: trackball@0 {
+    /* ノードの定義 */
+    trackball: pmw3610@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+};
+
+/* 接続を確実にするため、明示的にトラックボールをSPIのノードとして登録 */
+/* 上記でtrackballというラベルを付けたので、以下はそのまま機能します */
+/ {
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        input-processors = <&mouse_runtime_input_processor>;
+
+        scroller {
+            layers = <5>;
+            input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
+        };
     };
 };
