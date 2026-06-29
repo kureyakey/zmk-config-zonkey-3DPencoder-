@@ -19,17 +19,15 @@
         ;
 };
 
-/ {
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&mouse_runtime_input_processor>;
+/* トラックボールの設定 (ラベル参照で拡張) */
+&trackball_listener {
+    status = "okay";
+    device = <&trackball>;
+    input-processors = <&zip_temp_layer 6 700>;
 
-        
-        scroller {
-            layers = <スクロールレイヤー番号>;
-            input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
-        };
+    scroller {
+        layers = <5>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 2 5>;
     };
 };
 
