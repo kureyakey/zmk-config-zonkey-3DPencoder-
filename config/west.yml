@@ -5,7 +5,7 @@ manifest:
     - name: cormoran
       url-base: https://github.com/cormoran
     - name: badjeff
-      url-base: https://github.com/badjeff
+      url-base: https://github.com/kureyakey
     - name: caksoylar
       url-base: https://github.com/caksoylar  
     - name: sekigon-gonnoc
@@ -36,7 +36,7 @@ manifest:
       remote: sekigon-gonnoc
       revision: main
     - name: zmk-pmw3610-driver
-      remote: badjeff
+      remote: kureyakey
       revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
