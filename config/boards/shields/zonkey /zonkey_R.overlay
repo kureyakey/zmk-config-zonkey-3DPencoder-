@@ -1,7 +1,9 @@
 #include "zonkey.dtsi"
+#include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
+#include <input/processors/runtime-input-processor.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -21,11 +23,11 @@
 &trackball_listener {
     status = "okay";
     device = <&trackball>;
-    input-processors = <&zip_temp_layer 6 700>;
+    input-processors = <&mouse_runtime_input_processor>;
 
     scroller {
         layers = <5>;
-        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 2 5>;
+        input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
     };
 };
 
