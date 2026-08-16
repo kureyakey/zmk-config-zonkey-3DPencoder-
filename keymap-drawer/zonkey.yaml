@@ -265,7 +265,7 @@ layers:
   - ENTER
   - DEL
   '6':
-  - A
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
