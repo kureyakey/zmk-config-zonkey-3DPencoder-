@@ -14,7 +14,7 @@ manifest:
       revision: main
       import: app/west.yml
     - name: zmk-feature-non-lipo-battery-management
-      remote: sekigon-gonnoc
+      remote: kureyakey
       revision: main
     - name: zmk-pmw3610-driver
       remote: badjeff
