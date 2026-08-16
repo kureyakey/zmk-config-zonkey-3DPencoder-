@@ -27,8 +27,8 @@ layers:
   - Z
   - X
   - {t: C, h: '6'}
-  - {t: V, h: '5'}
-  - {t: B, h: '4'}
+  - {t: V, h: '6'}
+  - {t: B, h: '5'}
   - '-'
   - N
   - M
@@ -204,7 +204,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - .
   - KP 0
   - KP 1
@@ -247,8 +247,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -265,7 +265,7 @@ layers:
   - ENTER
   - DEL
   '6':
-  - {t: ▽, type: trans}
+  - A
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
