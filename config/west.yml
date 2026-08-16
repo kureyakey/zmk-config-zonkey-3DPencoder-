@@ -7,7 +7,9 @@ manifest:
     - name: badjeff
       url-base: https://github.com/badjeff
     - name: caksoylar
-      url-base: https://github.com/caksoylar  
+      url-base: https://github.com/caksoylar
+    - name: kureyakey
+      url-base: https://github.com/kureyakey
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
 
